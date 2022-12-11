@@ -1,7 +1,7 @@
-# GR-ConvNet
+# Deep Robotic Grasping using Generative Residual Convolutional Neural Network
 
-Deep Antipodal Robotic Grasping using Generative Residual Convolutional Neural Network
-TODO: add result pics
+A CNN (GR-ConvNet) model that can generate robust antipodal grasps from RGB-D input images at real-time
+![alt text](./results/Figure_15.png "Loss Curve")
 
 ## Setup
 - Clone this repository and install required libraries
