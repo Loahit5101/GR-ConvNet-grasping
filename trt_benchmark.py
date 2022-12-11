@@ -13,7 +13,8 @@ device = torch.device("cuda")
 
 #device = torch.device("cpu")
 
-model = torch.load("/home/loahit/GRconvnet/epoch_42_iou_0.92")
+model = torch.load("/home/loahit/GRconvnet/trained _Models/epoch_45_iou_0.98")
+baseline=model.to(device)
 model= model.to(device)
 
 model_gpu=model.to("cuda")
@@ -48,6 +49,7 @@ def benchmark(model, device="cuda", input_shape=(1, 4, 224, 224), dtype='fp32', 
         for i in range(1, nruns+1):
             start_time = time.time()
             features = model(input_data)
+            #print(features)
             torch.cuda.synchronize()
             end_time = time.time()
             timings.append(end_time - start_time)
@@ -58,10 +60,12 @@ def benchmark(model, device="cuda", input_shape=(1, 4, 224, 224), dtype='fp32', 
     print('Average Grasp Inference time: %.2f ms'%(np.mean(timings)*1000))
 
 #benchmark(model, device="cpu") for cpu
+print("Baseline:")
+benchmark(baseline,dtype='fp16')
 print("FP16 precision:")
 benchmark(trt_model_fp16,dtype='fp16')
 print("FP32 precision:")
 benchmark(trt_model_fp32,dtype='fp32')  
 
 torch.jit.save(trt_model_fp16, "trt_model_fp16.jit.pt")
-torch.jit.save(trt_model_fp32, "trt_model_fp16.jit.pt")
+torch.jit.save(trt_model_fp32, "trt_model_fp32.jit.pt")

@@ -56,6 +56,7 @@ def run():
     )
 
     network = GRconvNet()
+
     network = network.to(device)
     optimizer = optim.Adam(network.parameters())
     #optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
