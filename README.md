@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ```
 - Install [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html) and [Torch-TensorRT](https://github.com/pytorch/TensorRT)
 ## Architecture
-![alt text](Screenshot from 2022-12-11 18-18-48.png "Loss Curve")
+![alt text](./results/Architecture.png "Loss Curve")
 ## Dataset
 
 Download and extract the Cornell Grasping dataset and run the following command: [Cornell Grasping Dataset](https://www.kaggle.com/oneoneliu/cornell-grasp)
