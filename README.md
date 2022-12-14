@@ -18,7 +18,10 @@ pip install -r requirements.txt
 Download and extract the Cornell Grasping dataset and run the following command: [Cornell Grasping Dataset](https://www.kaggle.com/oneoneliu/cornell-grasp)
 ```
 python -m utils.dataset_processing.generate_cornell_depth <Path To Dataset>
+
 ````
+## Pretrained models
+Trained models are available [here](https://github.com/Loahit5101/GR-ConvNet-grasping/tree/main/trained%20_Models)
 ## Training
 ```
 python train.py
